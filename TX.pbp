@@ -1,0 +1,56 @@
+'****************************************************************
+'*  Name    : UNTITLED.BAS                                      *
+'*  Author  : ilker OKUR                                        *
+'*  Notice  : Copyright (c) 2018 ilker OKUR                     *
+'*          : All Rights Reserved                               *
+'*  Date    : 4.07.2018                                         *
+'*  Version : 1.0                                               *
+'*  Notes   :                                                   *
+'*          :                                                   *
+'****************************************************************
+@__CONFIG _MCLRE_OFF & _XT_OSC & _WDT_ON & _PWRTE_ON & _CP_OFF & _LVP_OFF
+CMCON=7
+INCLUDE "modedefs.bas"
+DEFINE CHAR_PACING 1000
+DEFINE OSC 4
+
+TRISA=0
+TRISB=1
+PORTA=0
+PORTB=0
+
+BASLA:
+
+SEROUT PORTA.0,T2400,["X",0] 
+
+
+WHILE PORTB.1=1
+SEROUT PORTA.0,T2400,["X",8]
+WEND
+
+WHILE PORTB.2=1
+SEROUT PORTA.0,T2400,["X",7]
+WEND
+
+WHILE PORTB.3=1
+SEROUT PORTA.0,T2400,["X",6]
+WEND
+
+WHILE PORTB.4=1
+SEROUT PORTA.0,T2400,["X",5]
+WEND
+
+WHILE PORTB.5=1
+SEROUT PORTA.0,T2400,["X",4]
+WEND
+
+WHILE PORTB.6=1
+SEROUT PORTA.0,T2400,["X",3]
+WEND
+
+WHILE PORTB.7=1
+SEROUT PORTA.0,T2400,["X",2]
+WEND
+
+GOTO BASLA
+END
